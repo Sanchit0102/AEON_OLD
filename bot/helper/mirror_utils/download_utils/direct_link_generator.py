@@ -664,9 +664,14 @@ def linkBox(url:str):
     return details
 
 
-def gofile(url, auth):
+def gofile(url):
     try:
-        _password = sha256(auth[1].encode("utf-8")).hexdigest() if auth else ''
+        if "::" in url:
+            _password = url.split("::")[-1]
+            _password = sha256(_password.encode("utf-8")).hexdigest()
+            url = url.split("::")[-2]
+        else:
+            _password = ''
         _id = url.split("/")[-1]
     except Exception as e:
         raise DirectDownloadLinkException(f"ERROR: {e.__class__.__name__}")
