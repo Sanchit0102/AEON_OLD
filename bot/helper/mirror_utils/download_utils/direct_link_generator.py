@@ -664,14 +664,9 @@ def linkBox(url:str):
     return details
 
 
-def gofile(url):
+def gofile(url, auth):
     try:
-        if "::" in url:
-            _password = url.split("::")[-1]
-            _password = sha256(_password.encode("utf-8")).hexdigest()
-            url = url.split("::")[-2]
-        else:
-            _password = ''
+        _password = sha256(auth[1].encode("utf-8")).hexdigest() if auth else ''
         _id = url.split("/")[-1]
     except Exception as e:
         raise DirectDownloadLinkException(f"ERROR: {e.__class__.__name__}")
@@ -693,7 +688,7 @@ def gofile(url):
             raise e
 
     def __fetch_links(session, _id, folderPath=''):
-        _url = f"https://api.gofile.io/getContent?contentId={_id}&token={token}&websiteToken=7fd94ds12fds4&cache=true"
+        _url = f"https://api.gofile.io/getContent?contentId={_id}&token={token}&wt=4fd6sg89d7s6&cache=true"
         if _password:
             _url += f"&password={_password}"
         try:
@@ -720,7 +715,8 @@ def gofile(url):
                 if not content['public']:
                     continue
                 if not folderPath:
-                    newFolderPath = path.join(details['title'], content["name"])
+                    newFolderPath = path.join(
+                        details['title'], content["name"])
                 else:
                     newFolderPath = path.join(folderPath, content["name"])
                 __fetch_links(session, content["id"], newFolderPath)
