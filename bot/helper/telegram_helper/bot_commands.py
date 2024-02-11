@@ -24,6 +24,7 @@ class _BotCommands:
         self.StatsCommand = [f'stats{CMD_SUFFIX}', 'statsall']
         self.HelpCommand = f'help{CMD_SUFFIX}'
         self.LogCommand = f'log{CMD_SUFFIX}'
+        self.UpCommand = f'up{CMD_SUFFIX}'
         self.ShellCommand = f'shell{CMD_SUFFIX}'
         self.EvalCommand = f'eval{CMD_SUFFIX}'
         self.ExecCommand = f'exec{CMD_SUFFIX}'
