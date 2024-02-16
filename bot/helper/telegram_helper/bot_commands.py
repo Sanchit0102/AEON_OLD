@@ -1,3 +1,4 @@
+# Moye Moye
 from bot import CMD_SUFFIX
 
 class _BotCommands:
