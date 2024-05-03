@@ -17,21 +17,21 @@ async def change_authorization(message, is_authorize):
     else:
         id_ = message.chat.id
     if is_authorize:
-        success_message = 'Authorized'
+        success_message = 'Jile Apni Zindagi'
         if id_ in user_data and user_data[id_].get('is_auth'):
-            success_message = 'Already authorized!'
+            success_message = 'Pehle Se Hai !'
         else:
             update_user_ldata(id_, 'is_auth', True)
             if DATABASE_URL:
                 await DbManager().update_user_data(id_)
     else:
-        success_message = 'Unauthorized'
+        success_message = 'BY BSDK CHIMTU !'
         if id_ not in user_data or user_data[id_].get('is_auth'):
             update_user_ldata(id_, 'is_auth', False)
             if DATABASE_URL:
                 await DbManager().update_user_data(id_)
         else:
-            success_message = 'Already unauthorized!'
+            success_message = 'Pehle Se Hi Pela Hua Hai !'
     await sendMessage(message, success_message)
 
 
@@ -45,19 +45,19 @@ async def change_sudo(message, is_sudo):
     if is_sudo:
         if id_:
             if id_ in user_data and user_data[id_].get('is_sudo'):
-                success_message = 'Already Sudo!'
+                success_message = 'Already PRO!'
             else:
                 update_user_ldata(id_, 'is_sudo', True)
                 if DATABASE_URL:
                     await DbManager().update_user_data(id_)
-                success_message = 'Promoted as Sudo'
+                success_message = 'Promoted as Malik'
         else:
             success_message = "Give ID or Reply To message of whom you want to Promote."
     elif id_ and id_ in user_data and user_data[id_].get('is_sudo'):
         update_user_ldata(id_, 'is_sudo', False)
         if DATABASE_URL:
             await DbManager().update_user_data(id_)
-        success_message = 'Demoted'
+        success_message = 'Aalelele'
     else:
         success_message = "Give ID or Reply To message of whom you want to remove from Sudo"
     await sendMessage(message, success_message)
