@@ -12,7 +12,7 @@ class TelegraphHelper:
         self.short_name = token_hex(4)
         self.access_token = None
         self.author_name = 'Aeon'
-        self.author_url = 'https://t.me/ProjectAeon'
+        self.author_url = 'https://t.me/THE_SILENT_TEAMS'
 
     async def create_account(self):
         await self.telegraph.create_account(
