@@ -55,7 +55,7 @@ async def cancell_all_buttons(_, message):
     async with download_dict_lock:
         count = len(download_dict)
     if count == 0:
-        await sendMessage(message, "No active tasks!")
+        await sendMessage(message, "No active tasks!, Sab marr Gaye 😥")
         return
 
     buttons = ButtonMaker()
