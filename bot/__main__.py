@@ -110,7 +110,7 @@ async def start(client, message):
         return await sendMessage(message, msg)
     elif await CustomFilters.authorized(client, message):
         help_command = f"/{BotCommands.HelpCommand}"
-        start_string = f'<b>✨ Silent Team ➔ Mirror & Leech Bot.</b>\nI Cᴀɴ Uᴘʟᴏᴀᴅ Fɪʟᴇꜱ, Lɪɴᴋꜱ, Tᴏʀʀᴇɴᴛꜱ, ᴇᴛᴄ. ᴛᴏ Tᴇʟᴇɢʀᴀᴍ, Gᴏᴏɢʟᴇ Dʀɪᴠᴇ, DDL Sᴇʀᴠᴇʀꜱ ᴀɴᴅ Rᴄʟᴏɴᴇ Sᴜᴘᴘᴏʀᴛᴇᴅ Sɪᴛᴇꜱ!\n<b>Type {help_command} to get a list of available commands</b>'
+        start_string = f'<b>✨ Silent Team ➔ Mirror & Leech Bot.</b>\n\nI Cᴀɴ Uᴘʟᴏᴀᴅ Fɪʟᴇꜱ, Lɪɴᴋꜱ, Tᴏʀʀᴇɴᴛꜱ, ᴇᴛᴄ. ᴛᴏ Tᴇʟᴇɢʀᴀᴍ, Gᴏᴏɢʟᴇ Dʀɪᴠᴇ, DDL Sᴇʀᴠᴇʀꜱ ᴀɴᴅ Rᴄʟᴏɴᴇ Sᴜᴘᴘᴏʀᴛᴇᴅ Sɪᴛᴇꜱ!\n\n<b>Type {help_command} to get a list of available commands</b>'
         await sendMessage(message, start_string, photo='IMAGES')
     else:
         await sendMessage(message, 'Aa Gya Kya, Swagat hai!', photo='IMAGES')
