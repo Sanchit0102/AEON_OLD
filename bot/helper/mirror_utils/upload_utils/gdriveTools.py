@@ -251,7 +251,7 @@ class GoogleDriveHelper:
         directory_name, _ = async_to_sync(format_filename, directory_name, self.__user_id, isMirror=True)
         file_metadata = {
             "name": directory_name,
-            "description": 'Uploaded by Aeon',
+            "description": 'Uploaded by Silent Team',
             "mimeType": self.__G_DRIVE_DIR_MIME_TYPE
         }
         if dest_id is not None:
