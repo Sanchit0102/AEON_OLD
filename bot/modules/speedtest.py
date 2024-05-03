@@ -10,7 +10,7 @@ from bot.helper.ext_utils.bot_utils import get_readable_file_size, new_task
 
 @new_task
 async def speedtest(_, message):
-    speed = await sendMessage(message, "Initializing Speedtest...")
+    speed = await sendMessage(message, "Ha Ye Karle Pehle...")
     
     def get_speedtest_results():
         test = Speedtest()
