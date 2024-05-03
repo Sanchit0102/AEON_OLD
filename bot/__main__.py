@@ -113,12 +113,12 @@ async def start(client, message):
         start_string = f'This bot can mirror all your links|files|torrents to Google Drive or any rclone cloud or to telegram.\n<b>Type {help_command} to get a list of available commands</b>'
         await sendMessage(message, start_string, photo='IMAGES')
     else:
-        await sendMessage(message, 'You are not a authorized user!', photo='IMAGES')
+        await sendMessage(message, 'Aa Gya Kya, Swagat hai!', photo='IMAGES')
     await DbManager().update_pm_users(message.from_user.id)
 
 
 async def restart(client, message):
-    restart_message = await sendMessage(message, 'Restarting...')
+    restart_message = await sendMessage(message, 'Ha ye krlo pehle 🥱...')
     if scheduler.running:
         scheduler.shutdown(wait=False)
     for interval in [QbInterval, Interval]:
@@ -236,7 +236,7 @@ async def restart_notification():
     else:
         chat_id, msg_id = 0, 0
     if await aiopath.isfile(".restartmsg"):
-        rmsg = 'Restarted Successfully!'
+        rmsg = 'Mai Jinda hu 🙂'
         try:
             await bot.edit_message_text(chat_id=chat_id, message_id=msg_id, text=rmsg)
         except:
