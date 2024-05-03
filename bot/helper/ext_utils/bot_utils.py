@@ -157,7 +157,7 @@ def source(self):
 
 
 def get_readable_message():
-    msg = '<b>Powered by Aeon</b>\n\n'
+    msg = '<b><a href="https://t.me/THE_DS_OFFICIAL">ℙ𝕠𝕨𝕖𝕣𝕖𝕕 𝕓𝕪 𝕊𝕚𝕝𝕖𝕟𝕥 𝕋𝕖𝕒𝕞 ❤</a></b>\n\n'
     button = None
     tasks = len(download_dict)
     currentTime = get_readable_time(time() - botStartTime)
