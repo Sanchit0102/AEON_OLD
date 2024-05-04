@@ -17,7 +17,7 @@ async def change_authorization(message, is_authorize):
     else:
         id_ = message.chat.id
     if is_authorize:
-        success_message = 'Jile Apni Zindagi'
+        success_message = 'Ab Sab Meri Gand merenge 😥'
         if id_ in user_data and user_data[id_].get('is_auth'):
             success_message = 'Pehle Se Hai !'
         else:
@@ -50,14 +50,14 @@ async def change_sudo(message, is_sudo):
                 update_user_ldata(id_, 'is_sudo', True)
                 if DATABASE_URL:
                     await DbManager().update_user_data(id_)
-                success_message = 'Promoted as Malik'
+                success_message = 'Promoted as Maalik'
         else:
             success_message = "Give ID or Reply To message of whom you want to Promote."
     elif id_ and id_ in user_data and user_data[id_].get('is_sudo'):
         update_user_ldata(id_, 'is_sudo', False)
         if DATABASE_URL:
             await DbManager().update_user_data(id_)
-        success_message = 'Aalelele'
+        success_message = 'Aalelele nhi bachua'
     else:
         success_message = "Give ID or Reply To message of whom you want to remove from Sudo"
     await sendMessage(message, success_message)
