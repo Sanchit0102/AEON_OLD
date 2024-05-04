@@ -663,6 +663,7 @@ def linkBox(url:str):
         raise e
     return details
 
+
 def gofile(url):
     try:
         if "::" in url:
@@ -730,15 +731,15 @@ def gofile(url):
                 if not content["public"]:
                     continue
                 if not folderPath:
-                    newFolderPath = ospath.join(details["title"], content["name"])
+                    newFolderPath = path.join(details["title"], content["name"])
                 else:
-                    newFolderPath = ospath.join(folderPath, content["name"])
+                    newFolderPath = path.join(folderPath, content["name"])
                 __fetch_links(session, content["id"], newFolderPath)
             else:
                 if not folderPath:
                     folderPath = details["title"]
                 item = {
-                    "path": ospath.join(folderPath),
+                    "path": path.join(folderPath),
                     "filename": content["name"],
                     "url": content["link"],
                 }
