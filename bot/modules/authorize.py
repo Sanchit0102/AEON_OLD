@@ -17,7 +17,7 @@ async def change_authorization(message, is_authorize):
     else:
         id_ = message.chat.id
     if is_authorize:
-        success_message = 'Ab Sab Meri Gand merenge 😥'
+        success_message = 'Krlo Use ab 😥'
         if id_ in user_data and user_data[id_].get('is_auth'):
             success_message = 'Pehle Se Hai !'
         else:
